@@ -6,10 +6,12 @@ $.getJSON('https://api.ipify.org?format=json')
     const screenRatio = (
       window.screen.availWidth / window.screen.availHeight
     ).toFixed(2);
-    const memory = navigator.deviceMemory;
+    const memory = navigator.deviceMemory ? navigator.deviceMemory : 32;
     const cookie = navigator.cookieEnabled ? 1 : 0;
-    const pixel = window.screen.pixelDepth;
-    const processors = navigator.hardwareConcurrency;
+    const pixel = window.screen.pixelDepth ? window.screen.pixelDepth : 0;
+    const processors = navigator.hardwareConcurrency
+      ? navigator.hardwareConcurrency
+      : 16;
     deviceId.innerHTML = `${IPAdr}.${screenRatio}.${pixel}.${memory}.${cookie}.${processors}`;
   })
   .fail(function () {
@@ -21,10 +23,12 @@ $.getJSON('https://api.ipify.org?format=json')
         const screenRatio = (
           window.screen.availWidth / window.screen.availHeight
         ).toFixed(2);
-        const memory = navigator.deviceMemory;
+        const memory = navigator.deviceMemory ? navigator.deviceMemory : 32;
         const cookie = navigator.cookieEnabled ? 1 : 0;
-        const pixel = window.screen.pixelDepth;
-        const processors = navigator.hardwareConcurrency;
+        const pixel = window.screen.pixelDepth ? window.screen.pixelDepth : 0;
+        const processors = navigator.hardwareConcurrency
+          ? navigator.hardwareConcurrency
+          : 16;
         deviceId.innerHTML = `${IPAdr}.${screenRatio}.${pixel}.${memory}.${cookie}.${processors}`;
       })
       .fail(function () {
