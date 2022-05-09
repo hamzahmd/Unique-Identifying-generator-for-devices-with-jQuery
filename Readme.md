@@ -1,1 +1,1 @@
-## [Check your ID](https://device-id-generator.netlify.app/)
+## [Check your ID](https://device-id-generator.surge.sh/)
