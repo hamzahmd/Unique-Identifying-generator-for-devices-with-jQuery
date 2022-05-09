@@ -35,7 +35,7 @@ $.getJSON('https://api.ipify.org?format=json')
         const touchSupport = navigator.maxTouchPoints
           ? navigator.maxTouchPoints
           : 0; // Touch support
-        deviceId.innerHTML = `${IPAdr}.${screenRatio}.${pixel}.${memory}.${cookie}.${processors}.${browserLength}.${touchSupport}`;
+        deviceId.innerHTML = `${IPAdr}.${screenRatio}.${pixel}.${memory}.${browserLength}.${touchSupport}.${cookie}.${processors}`;
       })
       .fail(function () {
         deviceId.innerHTML = 'Please Disable Ad';
