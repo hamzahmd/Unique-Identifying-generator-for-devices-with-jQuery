@@ -23,13 +23,19 @@ $.getJSON('https://api.ipify.org?format=json')
         const screenRatio = (
           window.screen.availWidth / window.screen.availHeight
         ).toFixed(2);
-        const memory = navigator.deviceMemory ? navigator.deviceMemory : 32;
+        const memory = navigator.deviceMemory ? navigator.deviceMemory : 32; //RAM Check
         const cookie = navigator.cookieEnabled ? 1 : 0;
-        const pixel = window.screen.pixelDepth ? window.screen.pixelDepth : 0;
+        const pixel = window.screen.pixelDepth ? window.screen.pixelDepth : 0; // Pixel depth
         const processors = navigator.hardwareConcurrency
           ? navigator.hardwareConcurrency
-          : 16;
-        deviceId.innerHTML = `${IPAdr}.${screenRatio}.${pixel}.${memory}.${cookie}.${processors}`;
+          : 16; // Number of processors
+        const browserLength = navigator.userAgent
+          ? navigator.userAgent.length
+          : 50; // length of the browser string
+        const touchSupport = navigator.maxTouchPoints
+          ? navigator.maxTouchPoints
+          : 0; // Touch support
+        deviceId.innerHTML = `${IPAdr}.${screenRatio}.${pixel}.${memory}.${cookie}.${processors}.${browserLength}.${touchSupport}`;
       })
       .fail(function () {
         deviceId.innerHTML = 'Please Disable Ad';
